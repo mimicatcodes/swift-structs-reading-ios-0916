@@ -1,10 +1,12 @@
+// ##### Class #####
+
 class Person_ {
     let firstName: String
     let lastName: String
     var fullName: String {
         return "\(firstName) \(lastName)"
-    }
-
+    } // calculated property!
+    
     init(firstName: String, lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
@@ -19,6 +21,7 @@ let jim = Person_(firstName: "Jimbo", lastName: "Guiseppe")
 print(jim.fullName)
 jim.goForARun()
 
+// ##### Struct #####
 
 struct Person {
     let firstName: String
@@ -91,7 +94,7 @@ func fillMug_(mug: Mug_) {
 
 let myMug_ = Mug_()
 print(myMug_.amountOfCoffee)
-fillMug_(myMug_)
+fillMug_(mug: myMug_)
 print(myMug_.amountOfCoffee)
 
 
@@ -108,3 +111,8 @@ var myMug1 = Mug()
 print(myMug1.amountOfCoffee)
 myMug1.fillMug()
 print(myMug1.amountOfCoffee)
+
+//let myMug2 = Mug()
+//myMug2.fillMug()  --> error. Unlike classes, a constant struct's properties cannot be changed—not from outside the struct, not even from within the struct's own methods, even if they're marked as mutating. Once a struct is constant, it is constant. It can't change.
+
+
